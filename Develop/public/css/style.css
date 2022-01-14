@@ -1,9 +1,9 @@
 :root {
-  --primary: #3d5852;
-  --secondary: #86938f;
+  --primary: #521E13;
+  --secondary:#CECD94;
   --tertiary: #5e877f;
   --quatrinary: #6c6b67;
-  --light: #e3e4e3;
+  --light: #CECD94;
   --dark: #182c23;
   --error: rgb(228, 46, 1);
   --border-radius: 0.3rem;
@@ -35,19 +35,6 @@ header {
   color: var(--light);
 }
 
-main {
-  display: flex;
-  flex-wrap: wrap;
-  flex-grow: 1;
-}
-
-aside {
-  flex: 0;
-  background-color: var(--tertiary);
-  padding: 80px;
-  text-align: left;
-  color: var(--light);
-}
 
 nav {
   display: flex;
@@ -62,18 +49,13 @@ nav a {
 }
 
 nav a:hover {
-  color: var(--secondary);
-  background-color: var(--dark);
+  color: var(--light);
+  background-color: var(--primary);
 }
 
 .gallery {
-  flex: 4;
-  background-color: #fff;
+  background-color: antiquewhite;
   padding: 50px;
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: center;
-  align-items: center;
 }
 
 .btn-no-style {
@@ -124,7 +106,7 @@ img {
   border-radius: var(--border-radius);
   border-style: double;
   border-width: thick;
-  background-color: #577a7c;
+  background-color: var(--primary);
   color: var(--light);
 }
 

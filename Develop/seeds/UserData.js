@@ -4,11 +4,11 @@ const UserDat =
 [
     {
       username: "meryem",
-      password: "salma",
+      password: "salma@",
     },
     {
       username: "salma",
-      password: "meryem",
+      password: "meryem@",
     },
   ];
 

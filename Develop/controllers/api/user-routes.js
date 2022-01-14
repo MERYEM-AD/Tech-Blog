@@ -1,6 +1,17 @@
 const router = require('express').Router();
 const { User } = require('../../models');
 
+//get All users
+
+router.get("/", async (req, res) => {
+  try {
+    const dbUserData = await User.findAll();
+    res.status(200).json(dbUserData);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
 // CREATE new user
 router.post('/', async (req, res) => {
   try {
@@ -10,6 +21,8 @@ router.post('/', async (req, res) => {
     });
 
     req.session.save(() => {
+      req.session.userId = dbUserData.id;
+      req.session.username = dbUserData.username;
       req.session.loggedIn = true;
 
       res.status(200).json(dbUserData);
@@ -46,6 +59,8 @@ router.post('/login', async (req, res) => {
     }
 
     req.session.save(() => {
+      req.session.userId = dbUserData.id;
+      req.session.username = dbUserData.username;
       req.session.loggedIn = true;
       console.log(`Saved session `+req.session.cookie
       );

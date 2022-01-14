@@ -7,6 +7,7 @@ const Post = require('./Post');
 class Comment extends Model {}
 
 Comment.init(
+  
   {
 
      id :{

@@ -41,12 +41,23 @@ router.get('/post/:id', withAuth,async (req, res) => {
     });
 
     const post = postData.get({ plain: true });
+
+
+    const commentData = await Comment.findAll({
+      include: [User],
+      where:{
+
+        post_id :req.params.id
+      }
+    });
+  // serialize the data
+    const comments = commentData.map((comment) => comment.get({ plain: true }));
     
 
 
     //render the information to the post page
     res.render("post", {
-      post,
+      post,comments,
       loggedIn:req.session.loggedIn
 
     });

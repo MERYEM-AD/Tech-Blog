@@ -14,11 +14,23 @@
 </div>
 <input type="hidden" name="post-id" value="{{post.id}}"/>
 <div class="card">
-  <div class="card-header"></div>
-  <form class="card-body" id="new-comment-form">
+  <div class="card-header"> Comments </div>
+
+{{#if comments.length}}
+        {{#each comments as |comment|}}
     <div class="card-footer">
-      {{> comments post.comments}}
-    </div>
+       <p>From  :    {{comment.user.username}} </p>
+      <p> Comment : {{comment.commentContent}} </p> 
+     <p> Created on  : {{comment.dateCreated}}</p> 
+
+  
+      {{/each}}
+    
+     </div>
+
+     {{/if}}
+  <form class="card-body" id="new-comment-form">
+ 
     
     <p class="form-label">Comment Here</p>
     <textarea class="form-input" id="comment-body" name="comment-body"></textarea>
@@ -28,6 +40,7 @@
 
 
 </div>
+ </div>
 
 <script src="/js/comment.js"></script>
 

@@ -7,7 +7,6 @@ const Post = require('./Post');
 class Comment extends Model {}
 
 Comment.init(
-  
   {
 
      id :{
@@ -23,7 +22,6 @@ Comment.init(
     },
     dateCreated: {
       type: DataTypes.DATEONLY,
-      allowNull: false,
       defaultValue: DataTypes.NOW,
     },
     user_id: {

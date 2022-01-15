@@ -27,13 +27,6 @@ router.get('/', async (req, res) => {
   }
 });
 
-
-
-
-
-
-
-
 router.get('/post/:id', withAuth,async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
@@ -48,6 +41,7 @@ router.get('/post/:id', withAuth,async (req, res) => {
     });
 
     const post = postData.get({ plain: true });
+    
 
 
     //render the information to the post page
@@ -83,6 +77,13 @@ router.get('/dashboard', withAuth, async (req, res) => {
   } catch (err) {
     res.redirect('login');
   }
+});
+
+
+// AFTER CLICK ON NEW POST BUTTON
+router.get('/dashboard/newPost', withAuth, (req, res) => {
+  // what view should we send the client when they want to create a new-post? (change this next line) - DONE!
+  res.render('newPost');
 });
 
 // Login route

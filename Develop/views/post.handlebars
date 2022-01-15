@@ -16,6 +16,9 @@
 <div class="card">
   <div class="card-header"></div>
   <form class="card-body" id="new-comment-form">
+    <div class="card-footer">
+      {{> comments post.comments}}
+    </div>
     
     <p class="form-label">Comment Here</p>
     <textarea class="form-input" id="comment-body" name="comment-body"></textarea>
@@ -25,4 +28,6 @@
 
 
 </div>
+
+<script src="/js/comment.js"></script>
 

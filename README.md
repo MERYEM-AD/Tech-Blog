@@ -86,7 +86,7 @@ Edit/Delete interface :
 
   * The URL of the GitHub repository : https://github.com/MERYEM-AD/Tech-Blog
 
-  *The URl of deployed application on heroku : 
+  *The URl of deployed application on heroku : https://guarded-reaches-18279.herokuapp.com/
   
   ## Questions
   iF you have any questions about the repo you can contact me by email : adiri.meryem.mw@gmail.com.

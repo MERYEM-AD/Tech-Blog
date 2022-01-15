@@ -80,11 +80,25 @@ router.get('/dashboard', withAuth, async (req, res) => {
 });
 
 
-// AFTER CLICK ON NEW POST BUTTON
+// add new Post 
 router.get('/dashboard/newPost', withAuth, (req, res) => {
-  // what view should we send the client when they want to create a new-post? (change this next line) - DONE!
   res.render('newPost');
 });
+// Edit user's spost
+router.get('/dashboard/edit/:id', withAuth, async (req, res) => {
+  try {
+    const postData = await Post.findByPk(req.params.id);
+    if (postData) {
+      const post = postData.get({ plain: true });
+      res.render('editPost', {post});
+    } else {
+      res.status(404).end();
+    }
+  } catch (err) {
+    res.redirect('login');
+  }
+});
+
 
 // Login route
 router.get('/login', (req, res) => {
